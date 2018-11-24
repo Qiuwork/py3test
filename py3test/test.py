@@ -1,6 +1,7 @@
 # coding:utf-8
 
 import os,collections
+from collections import OrderedDict
 from operator import itemgetter
 
 rows = [
@@ -9,8 +10,5 @@ rows = [
 {'fname': 'John', 'lname': 'Cleese', 'uid': 1001},
 {'fname': 'Big', 'lname': 'Jones', 'uid': 1004}
 ]
-
-print(sorted(rows,key=itemgetter(-'uid')))
-
 
 

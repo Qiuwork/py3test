@@ -58,3 +58,57 @@ def printStr(istr,num):
 s = "asdasj678596knxcn2132930knsdns12398mnfsdh234898ncmdnsdkj"
 num = 10
 print(printStr(s,num))
+
+#找出连续重复字符次数最多的子字符串
+a = '''uuuuuueqwoiej231aaaa8230912jdlskdasks22ddddddsdjasjdmnmxczfddfd56555555zmwqeoiqwoizcmmmmmm'''
+b = list(a)
+n = 1
+max = 0
+for i in range(len(b)):
+    if i >= 1:
+        if b[i] == b[i-1]:
+            n += 1
+        else:
+            if max < n:
+                max_str = []
+                max_str.append(b[i - 1])
+                max, n = n, 1
+            if max == n:
+                max_str.append(b[i - 1])
+                max, n = n, 1
+            else:
+                n = 1
+    if i == len(b) - 1 and max <= n:
+        max = n
+        max_str.append(b[i])
+print(max, max_str)
+for i in max_str:
+    print(i * max)
+
+#字符串反转
+teststr = 'asaaq eqwed'
+# 字母顺序反转1
+print(teststr[::-1])
+# 字母顺序反转2
+testlist = list(teststr)
+if len(testlist) % 2:
+    num = int(( len(testlist) - 1 ) / 2)
+else:
+    num = int(len(testlist) / 2)
+for i in range(num):
+    testlist[i], testlist[len(testlist)-1-i] = testlist[len(testlist)-1-i], testlist[i]
+teststr = ''.join(testlist)
+print(teststr)
+teststr = 'asaaq eqwed'
+#单词顺序反转1
+print(" ".join(teststr.split(' ')[::-1]))
+#单词顺序反转2
+testlist = teststr.split(' ')
+if len(testlist) % 2:
+    num = int(( len(testlist) - 1 ) / 2)
+else:
+    num = int(len(testlist) / 2)
+for i in range(num):
+    testlist[i], testlist[len(testlist)-1-i] = testlist[len(testlist)-1-i], testlist[i]
+teststr = ' '.join(testlist)
+print(teststr)

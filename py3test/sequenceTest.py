@@ -62,3 +62,27 @@ print(a.setdefault('lname','aaa'))
 print(a.setdefault('11','bbb'))
 print(a)
 
+
+# set
+# 'add', 'remove', 'update', 'discard', 'pop', 'clear', 'copy'
+# 'intersection'(&), 'union'(|), difference(-), symmetric_difference(^)
+# 'intersection_update', 'difference_update', 'symmetric_difference_update'
+# 'issubset'(<=), 'issuperset'(>=), 'isdisjoint'
+
+t1 = {1, 2, 3, 4}
+t2 = {3, 4, 5, 6}
+dir(t1)
+t1.discard(7)
+print(t1)
+t1.pop()
+t1.clear()
+t1.copy()
+
+t1.isdisjoint(t2)   # 是否不存在交集， 不存在则True， 存在则False
+t1.intersection_update(t2)  # 相比与intersection，会更新t1只保留交集的内容
+t1.difference_update(t2)    # 相比与difference，会更新t1只保留差集的内容
+t1.symmetric_difference_update(t2)  # 相比与symmetric_difference，会更新t1只保留对称差集的内容
+
+
+#collections.OrderedDict() 有序字典
+from collections import OrderedDict
