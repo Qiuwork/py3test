@@ -36,3 +36,25 @@ def ip_counter(file, num, sequence = "Desc"):
 file = 'D:\\py3test\\ip.txt'
 num = 5
 print(ip_counter(file, num))
+
+def printStr(istr,num):
+    if not isinstance(istr, str):
+        print("astr is not a string.")
+        return
+    if not isinstance(num, int):
+        print("num is not int.")
+        return
+    n = 0
+    alist = []
+    for i in istr:
+        if n >= num:
+            break
+        if i.isdigit() and int(i) % 2 == 0:
+            print(i)
+            alist.append(i)
+            n += 1
+    return alist
+
+s = "asdasj678596knxcn2132930knsdns12398mnfsdh234898ncmdnsdkj"
+num = 10
+print(printStr(s,num))
