@@ -3,6 +3,8 @@
 import os,time
 from collections import OrderedDict
 from operator import itemgetter
+
+#获取文件的IP，并排序输出。
 def ip_counter(file, num, sequence = "Desc"):
     if not os.path.isfile(file):
         print("Not a File.")
@@ -37,6 +39,7 @@ file = 'D:\\py3test\\ip.txt'
 num = 5
 print(ip_counter(file, num))
 
+# 取出给定字符串中的数字，并打印出是偶数的字符，当打印次数大于10时退出
 def printStr(istr,num):
     if not isinstance(istr, str):
         print("astr is not a string.")
