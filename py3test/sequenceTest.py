@@ -43,3 +43,22 @@ a3 = (1,a2)
 print(a3)
 a2.clear()
 print(a3)
+
+#dict:get, keys, values, items, pop, popitem, update, setdefault, fromkeys, clear, copy
+a  = {'fname': 'Brian', 'lname': 'Jones', 'uid': 1003}
+print(a)
+print(a.get('fname1',1))
+print(a.get('fname2'))
+print(a.keys())
+print(a.values())
+print(a.items())
+print(a.pop('Brian','not have'))
+print(a.pop('fname','not have'))
+print(a.popitem())
+print(a.update({'1':'2','3':4,'5':'6','7':8}))
+print(dict.fromkeys({'1':'2','3':4},'a'))
+print(dict.fromkeys(a,'a'))
+print(a.setdefault('lname','aaa'))
+print(a.setdefault('11','bbb'))
+print(a)
+

@@ -18,10 +18,7 @@ def ip_counter(file, num, sequence = "Desc"):
     with open(file, 'r', encoding='utf-8') as f:
         for ip in f:
             ip = ip.strip()
-            if ip_dict.get(ip):
-                ip_dict[ip] += 1
-            else:
-                ip_dict[ip] = 1
+            ip_dict[ip] = ip_dict.setdefault(ip,0) + 1
     if sequence.lower() == "asc":
         ip_dict = OrderedDict(sorted(ip_dict.items(),key = lambda x: x[1]))
     else:
@@ -35,7 +32,7 @@ def ip_counter(file, num, sequence = "Desc"):
     print(end_time-start_time)
     return ip_result
 
-file = 'D:\\py3test\\ip.txt'
+file = 'e:\\py3test\\ip.txt'
 num = 5
 print(ip_counter(file, num))
 
