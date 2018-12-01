@@ -102,7 +102,7 @@ print(std1[0])
 getattr
 class URL():
     def __init__(self, path='http://api.huice.server'):
-        self._path = path
+        self.__path = path
         self.args = '?k=v'
 
     def __getattr__(self, path):
