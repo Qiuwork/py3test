@@ -70,3 +70,97 @@ class A():
 A.aa('haha')
 print(A.a)
 
+
+class Foo(object):
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return '{what}'.format(what=self._name)
+
+    @name.setter
+    def name(self, value):
+        if isinstance(value, bytes):
+            self._name = value
+        else:
+            self._name = None
+
+
+f = Foo('hello')
+print(f.name)
+f.name = 22
+print(f.name)
+f._name = 2
+print(f.name)
+
+class base(object):
+    def __init__(self):
+        print('in base init')
+
+    def say(self):
+        print('in base say')
+
+    def __del__(self):
+        print('in base del')
+
+class father(base):
+    pass
+
+f = father()
+f.say()
+del f
+
+class base(object):
+    def __init__(self):
+        print('in base init')
+
+    def say(self):
+        print('in base say')
+
+    def __del__(self):
+        print('in base del')
+
+class father(base):
+    def __init__(self):
+        print('in father init')
+
+    def say(self):
+        print('in father say')
+
+    def __del__(self):
+        print('in father del')
+
+f = father()
+f.say()
+del f
+
+#二叉树先序遍历
+
+class Node(object):
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def a(root):
+    if root == None:
+        return
+    print(root.value)
+    a(root.left)
+    a(root.right)
+
+n1 = Node(1)
+n2 = Node(2)
+n3 = Node(3)
+n4 = Node(4)
+n5 = Node(5)
+n6 = Node(6)
+n7 = Node(7)
+n1.left = n2
+n1.right = n3
+n2.left = n4
+n2.right = n5
+n3.right = n6
+n5.left = n7
+a(n1)

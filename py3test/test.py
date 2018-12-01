@@ -13,3 +13,13 @@ rows = [
 ]
 
 
+try:
+    print(1)
+    # 1/0
+    # return
+except Exception as e:
+    print(2)
+else:
+    print(3)
+finally:
+    print(4)
