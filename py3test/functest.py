@@ -25,3 +25,48 @@ aa(1,2,3,4,5,6,**c)
 aaa(1,*(2,3,4,5,6),**c)
 aaa(1,2,3,4,5,6,**c)
 
+#类
+class A():
+
+    age = 111
+
+    def __init__(self, name, age=2):
+        self.name = name
+        self.__class__.age = age
+
+    def a(self, b = 'aaa'):
+        print(self.name, self.age, b)
+
+    @staticmethod
+    def b(name, age = '3', b = 'bbb'):
+        A.age = age
+        print(name, b, age)
+
+    @classmethod
+    def c(cls, name, b = 'ccc'):
+        print(name, b, cls.age)
+        cls.age = 333
+        print(cls.age)
+
+a = A(1)
+a.a()
+print(a.age, A.age)
+b = A(1, 22)
+b.a()
+print(b.age, A.age)
+A.b(1, 4)
+print(A.age)
+A.c(1)
+print(A.age)
+
+class A():
+
+    a = 'a'
+
+    @classmethod
+    def aa(cls, bb):
+        print('say {1} in {0}, a is {2}'.format(cls.__name__, bb, cls.a))
+
+A.aa('haha')
+print(A.a)
+
