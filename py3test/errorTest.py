@@ -71,7 +71,9 @@ try:
     #return
 except Exception as e:
     print('catch except')
+    raise Exception()
 else:
     print('no except')
+    raise Exception()
 finally:
     print('in finally')
